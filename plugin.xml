@@ -24,45 +24,6 @@
         <clobbers target="JPush" />
     </js-module>
 
-    <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="JPushPlugin">
-                <param name="ios-package" value="JPushPlugin" />
-            </feature>
-        </config-file>
-
-        <header-file src="src/ios/Plugins/JPushDefine.h" />
-        <header-file src="src/ios/Plugins/JPushPlugin.h" />
-        <source-file src="src/ios/Plugins/JPushPlugin.m" />
-        <header-file src="src/ios/Plugins/AppDelegate+JPush.h" />
-        <source-file src="src/ios/Plugins/AppDelegate+JPush.m" />
-
-        <header-file src="src/ios/lib/JPUSHService.h" />
-        <source-file src="src/ios/lib/jpush-ios-3.0.7.a" framework="true" />
-        <resource-file src="src/ios/JPushConfig.plist" />
-
-        <framework src="CFNetwork.framework" weak="true" />
-        <framework src="CoreFoundation.framework" weak="true" />
-        <framework src="CoreTelephony.framework" weak="true" />
-        <framework src="SystemConfiguration.framework" weak="true" />
-        <framework src="CoreGraphics.framework" weak="true" />
-        <framework src="Foundation.framework" weak="true" />
-        <framework src="UIKit.framework" weak="true" />
-        <framework src="Security.framework" weak="true" />
-        <framework src="libz.tbd" weak="true" />
-        <framework src="AdSupport.framework" weak="true" />
-        <framework src="UserNotifications.framework" weak="true" />
-        <framework src="libresolv.tbd" weak="true" />
-
-        <config-file target="*JPushConfig.plist" parent="Appkey">
-            <string>$APP_KEY</string>
-        </config-file>
-
-        <!-- <hook type="after_platform_add" src="hooks/iosEnablePush.js" />
-        <hook type="after_plugin_install" src="hooks/iosEnablePush.js" />
-        <hook type="before_plugin_uninstall" src="hooks/iosDisablePush.js" /> -->
-    </platform>
-
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="JPushPlugin">
